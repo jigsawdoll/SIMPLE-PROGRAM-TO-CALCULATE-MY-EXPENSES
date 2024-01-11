@@ -1,0 +1,113 @@
+#include <stdio.h>
+
+//fungsi rekursif untuk satuan
+int ribuan(int gt2r, int gt7r, int hgr, int hari_2hari1, int kuota1);
+//fungsi rekursif untuk puluhan
+int puluhan(int gt2p, int gt7p, int hgp, int hari_2hari2, int kuota2);
+//fungsi rekursif untuk ratusan
+int ratusan(int gt2rt, int gt7rt, int hgrt, int hari_2hari3, int kuota3);
+//fungsi relursif untuk jutaan
+int jutaan(int gt2j, int gt7j, int hgj, int hari_2hari4, int kuota4);
+
+int main() 
+{
+	char user[50];
+	printf("\n Masukkan Username: "); scanf("%s", &user);
+	printf(" Username: %s", user);
+	
+	int pilihan_satuan;
+	printf("\n HARAP MASUKKAN ANGKA 000 SUPAYA SAYA TIDAK SALAH DALAM MENGHITUNG UANG ANDA! \n");
+	printf("\n\n 1. Satuan \n 2. Puluhan \n 3. Ratusan \n 4. Jutaan "); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Masukkan Pilihan Satuan:  ", user); scanf("%i", &pilihan_satuan); puts("\n");
+	switch(pilihan_satuan)
+	{
+		case 1:;
+			int gt2r, gt7r, hgr, hari_2hari1, kuota1;
+			return ribuan(gt2r, gt7r, hgr, hari_2hari1, kuota1);
+			break;
+		/* =========================================================== */
+		case 2:;
+			int gt2p, gt7p, hgp, hari_2hari2, kuota2;
+			return puluhan(gt2p, gt7p, hgr, hari_2hari2, kuota2);
+			break;
+		/* =========================================================== */
+		case 3:;
+			int gt2rt, gt7rt, hgrt, hari_2hari3, kuota3;
+			return ratusan(gt2rt, gt7rt, hgrt, hari_2hari3, kuota3);
+			break;
+		/* =========================================================== */	
+		case 4:;
+			int gt2j, gt7j, hgj, hari_2hari4, kuota4;
+			return jutaan(gt2j, gt7j, hgj, hari_2hari4, kuota4);
+			break;
+	}
+	return 0;
+}
+
+/* deklarasikan fungsi rekursif untuk satuan */
+int ribuan(int gt2r, int gt7r, int hgr, int hari_2hari1, int kuota1)
+{
+	char user[50];
+	printf("\n Masukkan Username Kembali Untuk Konfirmasi: "); scanf("%s", &user);
+	printf(" Username: %s", user); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Masukkan Gaji Tanggal 2: Rp. ", user); scanf("%i", &gt2r); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Masukkan Gaji Tanggal 7: Rp. ", user); scanf("%i", &gt7r); puts("\n");
+	hgr = (float)gt2r + (float)gt7r;
+	printf(" [root@%s jigsaw]# \n => Total = Rp.%.2f \n", user, (float)hgr);
+	printf("\n [root@%s jigsaw]# \n => Masukkan Jumlah Uang Yang Kamu Habiskan Dalam 2 Hari Di Lingkup Satu Minggu Dari Total Semua Gaji Tadi: \n > ", user);
+	scanf("%i", &hari_2hari1); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Okay. Sekarang, Berapa Jumlah Total Uang Yang Kamu Habiskan Untuk Kuota Internet Dalam Satu Bulan Dari Gaji Tadi: \n > ", user);
+	scanf("%i", &kuota1); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Total = Rp.%.2f \n", user, (float)hgr-(hari_2hari1 + kuota1));
+}
+
+/* deklarasikan fungsi rekursif untuk puluhan */
+int puluhan(int gt2p, int gt7p, int hgp, int hari_2hari2, int kuota2)
+{
+	char user[50];
+	printf("\n Masukkan Username Kembali Untuk Konfirmasi: "); scanf("%s", &user);
+	printf(" Username: %s", user); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Masukkan Gaji Tanggal 2: Rp. ", user); scanf("%i", &gt2p); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Masukkan Gaji Tanggal 7: Rp. ", user); scanf("%i", &gt7p); puts("\n");
+	hgp = (float)gt2p + (float)gt7p;
+	printf(" [root@%s jigsaw]# \n => Total = Rp.%.2f \n", user, (float)hgp);
+	printf("\n [root@%s jigsaw]# \n => Masukkan Jumlah Uang Yang Kamu Habiskan Dalam 2 Hari Di Lingkup Satu Minggu Dari Total Semua Gaji Tadi: \n > ", user);
+	scanf("%i", &hari_2hari2); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Okay. Sekarang, Berapa Jumlah Total Uang Yang Kamu Habiskan Untuk Kuota Internet Dalam Satu Bulan Dari Gaji Tadi: \n > ", user);
+	scanf("%i", &kuota2); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Total = Rp.%.2f \n", user, (float)hgp-(hari_2hari2 + kuota2));
+}
+
+/* deklarasikan fungsi rekursif untuk ratusan */
+int ratusan(int gt2rt, int gt7rt, int hgrt, int hari_2hari3, int kuota3)
+{
+	char user[50];
+	printf("\n Masukkan Username Kembali Untuk Konfirmasi: "); scanf("%s", &user);
+	printf(" Username: %s", user); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Masukkan Gaji Tanggal 2: Rp. ", user); scanf("%i", &gt2rt); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Masukkan Gaji Tanggal 7: Rp. ", user); scanf("%i", &gt7rt); puts("\n");
+	hgrt = (float)gt2rt + (float)gt7rt;
+	printf(" [root@%s jigsaw]# \n => Total = Rp.%.2f \n", user, (float)hgrt);
+	printf("\n [root@%s jigsaw]# \n => Masukkan Jumlah Uang Yang Kamu Habiskan Dalam 2 Hari Di Lingkup Satu Minggu Dari Total Semua Gaji Tadi: \n > ", user);
+	scanf("%i", &hari_2hari3); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Okay. Sekarang, Berapa Jumlah Total Uang Yang Kamu Habiskan Untuk Kuota Internet Dalam Satu Bulan Dari Gaji Tadi: \n > ", user);
+	scanf("%i", &kuota3); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Total = Rp.%.2f \n", user, (float)hgrt-(hari_2hari3 + kuota3));
+}
+
+/* deklarasikan fungsi rekursif untuk jutaan */
+int jutaan(int gt2j, int gt7j, int hgj, int hari_2hari4, int kuota4)
+{
+	char user[50];
+	printf("\n Masukkan Username Kembali Untuk Konfirmasi: "); scanf("%s", &user);
+	printf(" Username: %s", user); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Masukkan Gaji Tanggal 2: Rp. ", user); scanf("%i", &gt2j); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Masukkan Gaji Tanggal 7: Rp. ", user); scanf("%i", &gt7j); puts("\n");
+	hgj = (float)gt2j + (float)gt7j;
+	printf(" [root@%s jigsaw]# \n => Total = Rp.%.2f \n", user, (float)hgj);
+	printf("\n [root@%s jigsaw]# \n => Masukkan Jumlah Uang Yang Kamu Habiskan Dalam 2 Hari Di Lingkup Satu Minggu Dari Total Semua Gaji Tadi: \n > ", user);
+	scanf("%i", &hari_2hari4); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Okay. Sekarang, Berapa Jumlah Total Uang Yang Kamu Habiskan Untuk Kuota Internet Dalam Satu Bulan Dari Gaji Tadi: \n > ", user);
+	scanf("%i", &kuota4); puts("\n");
+	printf(" [root@%s jigsaw]# \n => Total = Rp.%.2f \n", user, (float)hgj-(hari_2hari4 + kuota4));
+}
